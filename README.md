@@ -1,16 +1,16 @@
-<h3><a href="https://bitbucket.org/tamachan/binaryeditorbz/src/master/">Mirror (bitbucket)→</a></h3>
-<br />
-<h3><a href="https://github.com/devil-tamachan/binaryeditorbz/releases">ダウンロードへ移動→</a></h3>
-<h3><a href="http://devil-tamachan.github.io/BZDoc/">ヘルプへ移動→</a></h3>
+[![Build status](https://ci.appveyor.com/api/projects/status/ran1b146csojgck3?svg=true)](https://ci.appveyor.com/project/tamachan/binaryeditorbz-qxxwa)
 
-<A href="http://www.vcraft.jp/">c.mosさん</A>作、<A href="http://www.vcraft.jp/soft/bz.html">Binary Editor Bz</A>の改造版です    
+## [ダウンロードへ移動→](https://gitlab.com/devill.tamachan/binaryeditorbz/releases)
 
-c.mosさんのご好意でソースが頂けました。それをtamachanが改造しました。
+## [ヘルプへ移動→](http://devil-tamachan.github.io/BZDoc/)
 
-<a href="http://polopoloaria.blogspot.jp/2013/11/blog-post.html">![](http://devil-tamachan.github.io/BZDoc/image/bzscratch6.png)</a>
+[c.mosさん](http://www.vcraft.jp/)作、[Binary Editor Bz](http://www.vcraft.jp/soft/bz.html)の改造版です 
+c.mosさんのご好意でソースが頂けました。それをtamachanが改造しました。 
 
+![](https://gitlab.com/devill.tamachan/BZDoc/raw/master/site/image/bzscratch6.png)
 
 今後のアップデート予定：
+
  * 1.9.X (近日) - 機能追加、バグ修正、最適化
  * 2.0 (未定) - 安定したら・・・
  * X.X (未定) - RAWディスクサポートとか機能追加とか
@@ -23,21 +23,16 @@ c.mosさんのご好意でソースが頂けました。それをtamachanが改造しました。
  * 英語版リソースの補修
 
 優先度低：
+
  * HTML5へポート
 
-バグレポート、要望は<A href="https://github.com/devil-tamachan/binaryeditorbz/issues">Issues</A>へどうぞ
 
+バグレポート、要望は [Issues](https://gitlab.com/devill.tamachan/binaryeditorbz/issues) へどうぞ 
 
-<br />
-
-<p>
 ↓ Bz1.9.8
 
-</p>
+![](https://gitlab.com/devill.tamachan/binaryeditorbz/raw/master/HP/bzscr20151222.png)
 
-<img src="https://raw.githubusercontent.com/devil-tamachan/binaryeditorbz/master/HP/bzscr20151222.png">
+ MacOSX版のスクリーンショット20130606
 
-<p>
-MacOSX版のスクリーンショット20130606
-</p>
-<img src="https://raw.githubusercontent.com/devil-tamachan/binaryeditorbz/master/HP/macalpha20130606.png">
+![](https://gitlab.com/devill.tamachan/binaryeditorbz/raw/master/HP/macalpha20130606.png)
