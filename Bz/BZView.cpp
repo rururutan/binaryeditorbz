@@ -1497,7 +1497,7 @@ void CBZView::MoveCaretTo(UINT64 dwNewCaret)
 		dwNewCaret = dwTotal;
 	}
 
-  int dy = dwNewCaret/16 - m_dwCaret/16;
+  INT64 dy = dwNewCaret/16 - m_u64V/*m_dwCaret/16*/;
 
   /*WTL::CRect rect;
   UINT64 v64 = GetScrollPosU64V();
@@ -1509,10 +1509,10 @@ void CBZView::MoveCaretTo(UINT64 dwNewCaret)
   }*/
 
   m_dwCaret = dwNewCaret;
-  int scrolldy=0;
-	if(!DrawCaret(&scrolldy)) {
+  //INT64 scrolldy=0;
+	if(!DrawCaret(NULL/*&scrolldy*/)) {
     ScrollBy(0, dy, !m_bBlock);
-    scrolldy += dy;
+    //scrolldy += dy;
   }
   
   /*if(dwOldCaret >= dwOrg)
