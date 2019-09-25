@@ -238,7 +238,15 @@ public:
     t.Replace(_T("\r"), _T("\\r"));
     t.Replace(_T("\n"), _T("\\n"));
     CStringA str;
-    str.Format("%s = \"%s\"\n", name, CT2A(val, CP_UTF8));
+    //str.Format("%s = \"%s\"\n", name, CT2A(val, CP_UTF8)); //64ビット版だけ文字化けするので禁止。UTF8が化ける。32ビット版は問題無い
+    str.Format("%s = \"", name);
+    HRESULT hr = file.Write(((LPVOID)(LPCSTR)(str)), str.GetLength());
+    if(FAILED(hr))return hr;
+    CT2A u8str(t, CP_UTF8);
+    int lenU8str = lstrlenA((LPSTR)u8str);
+    hr = file.Write(((LPVOID)(LPSTR)(u8str)), lenU8str);
+    if(FAILED(hr))return hr;
+    str = "\"\n";
     return file.Write(((LPVOID)(LPCSTR)(str)), str.GetLength());
   }
 
