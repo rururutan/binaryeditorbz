@@ -146,6 +146,7 @@ public:
 
     bMiniToolbar = GetProfileInt(key, _T("MiniToolbar"), TRUE);
     lastPalletName = GetProfileString(key, _T("lastPalletName"));
+    lastSplitView = GetProfileInt(key, _T("LastSplitView"), 0);
 
     CheckOptions();
    // key.Flush();
@@ -201,6 +202,7 @@ public:
     bAddressTooltip = TRUE;
 
     bMiniToolbar = TRUE;
+    lastSplitView = 0;
   }
 
   void CheckOptions()
@@ -238,7 +240,7 @@ public:
     t.Replace(_T("\r"), _T("\\r"));
     t.Replace(_T("\n"), _T("\\n"));
     CStringA str;
-    //str.Format("%s = \"%s\"\n", name, CT2A(val, CP_UTF8)); //64ãƒ“ãƒƒãƒˆç‰ˆã ã‘æ–‡å­—åŒ–ã‘ã™ã‚‹ã®ã§ç¦æ­¢ã€‚UTF8ãŒåŒ–ã‘ã‚‹ã€‚32ãƒ“ãƒƒãƒˆç‰ˆã¯å•é¡Œç„¡ã„
+    //str.Format("%s = \"%s\"\n", name, CT2A(val, CP_UTF8)); //64ƒrƒbƒg”Å‚¾‚¯•¶š‰»‚¯‚·‚é‚Ì‚Å‹Ö~BUTF8‚ª‰»‚¯‚éB32ƒrƒbƒg”Å‚Í–â‘è–³‚¢
     str.Format("%s = \"", name);
     HRESULT hr = file.Write(((LPVOID)(LPCSTR)(str)), str.GetLength());
     if(FAILED(hr))return hr;
@@ -306,7 +308,7 @@ public:
     CAtlFile file;
     if(FAILED(file.Create(path, GENERIC_WRITE, 0, CREATE_ALWAYS)))return E_FAIL;
 
-    CStringA t = CW2A(_T("/* ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã‚‹ã¨ãƒãƒ¼ã‚¿ãƒ–ãƒ«ãƒ¢ãƒ¼ãƒ‰ã«ãªã‚Šã¾ã™ã€‚è¨­å®šã¯ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¸æ›¸ãã ã•ã‚Œã¾ã™ã€‚ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã«ã¯æ›¸ãè¾¼ã¾ã‚Œã¾ã›ã‚“ã€‚ */\r\n\r\n"), CP_UTF8);
+    CStringA t = CW2A(_T("/* ‚±‚Ìƒtƒ@ƒCƒ‹‚ª‚ ‚é‚Æƒ|[ƒ^ƒuƒ‹ƒ‚[ƒh‚É‚È‚è‚Ü‚·Bİ’è‚Í‚±‚Ìƒtƒ@ƒCƒ‹‚Ö‘‚«‚¾‚³‚ê‚Ü‚·BƒŒƒWƒXƒgƒŠ‚É‚Í‘‚«‚Ü‚ê‚Ü‚¹‚ñB */\r\n\r\n"), CP_UTF8);
     file.Write( ((LPCVOID)(LPCSTR)t), t.GetLength());
     
     WriteFileInt(file, "PortableVersion", 1);
@@ -376,6 +378,7 @@ public:
 
     WriteFileInt(file, "MiniToolbar", bMiniToolbar);
     WriteFileString(file, "lastPalletName", lastPalletName);
+    WriteFileInt(file, "LastSplitView", lastSplitView);
 
 
     file.Flush();
@@ -453,6 +456,7 @@ public:
 
     WriteProfileInt(key, _T("MiniToolbar"), bMiniToolbar);
     WriteProfileString(key, _T("lastPalletName"), lastPalletName);
+    WriteProfileInt(key, _T("LastSplitView"), lastSplitView);
 
     key.Flush();
   }
@@ -509,6 +513,8 @@ public:
   BOOL bMiniToolbar;
 
   CString lastPalletName;
+
+  int lastSplitView;
 
 public:
   CBZOptions() : m_bModified(FALSE), bPortableMode(FALSE) { }

@@ -438,6 +438,7 @@ void CMainFrame::_OnViewSplit(int nID)
 
   SwitchActiveBZView();
   ResetWindowWidth();
+  options.lastSplitView = m_nSplitView==ID_VIEW_SPLIT_H ? 0:1;
 }
 
 LRESULT CMainFrame::OnStatusBarClicked(LPNMHDR pnmh)
