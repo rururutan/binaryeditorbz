@@ -135,6 +135,14 @@ void CBZView::OnUpdateJump()
   UIEnable(ID_JUMP_END, m_pDoc->GetDocSize()!=0);
 }
 
+void AddStringToSearchBox(WTL::CComboBox* pCombo, LPCTSTR lpFind)
+{
+  int iFind = pCombo->FindStringExact(-1, lpFind);
+  if(iFind!=CB_ERR)pCombo->DeleteString(iFind);
+  pCombo->InsertString(0, lpFind);
+  return;
+}
+
 void CBZView::OnJumpFindnext(UINT uNotifyCode, int nID, CWindow wndCtl)
 {
   WTL::CComboBox* pCombo = &(GetMainFrame()->m_combo_toolbar);
@@ -157,7 +165,7 @@ void CBZView::OnJumpFindnext(UINT uNotifyCode, int nID, CWindow wndCtl)
     pCombo->SetWindowText(_T("? "));
     return;
   }
-  pCombo->AddString(CA2T(sFind));
+  AddStringToSearchBox(pCombo, CA2T(sFind));
   if(c1 == '?' || c1 == '+' || c1 == '>'|| c1 == '<') {
     DWORD dwNew = 0;
     long nResult;
