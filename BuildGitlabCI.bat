@@ -1,6 +1,7 @@
 echo "running scripts in the build job"
 choco install -y patch
 choco install -y dos2unix
+choco install -y cmake
 cd Bz
 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
 dos2unix atlscrl.h.patch
