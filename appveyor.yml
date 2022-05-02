@@ -21,7 +21,7 @@ build_script:
 - unix2dos include\atlscrl.h
 - cd ..
 - appveyor DownloadFile https://zlib.net/zlib1212.zip
-- 7z x zlib1211.zip > NUL
+- 7z x zlib1212.zip > NUL
 - cd zlib-1.2.11
 - md build
 - cd build
