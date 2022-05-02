@@ -18,8 +18,8 @@ build:
   stage: build
   script:
     - echo "running scripts in the build job"
+    - choco install gnuwin
     - cd Bz
-    - dir
     - 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
     - dos2unix atlscrl.h.patch
     - cd WTL91_5321_Final
