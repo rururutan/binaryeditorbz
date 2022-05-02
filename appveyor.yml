@@ -22,7 +22,7 @@ build_script:
 - cd ..
 - appveyor DownloadFile https://zlib.net/zlib1212.zip
 - 7z x zlib1212.zip > NUL
-- cd zlib-1.2.11
+- cd zlib-1.2.12
 - md build
 - cd build
 - cmake -G "Visual Studio 12 2013" -DBUILD_SHARED_LIBS=OFF -DCMAKE_GENERATOR_TOOLSET=v120_xp -D CMAKE_C_FLAGS_RELEASE:STRING="/MT /Os /GF /GL" ..
@@ -32,10 +32,10 @@ build_script:
 - cd ..
 - md build
 - cd build
-- cmake -G "Visual Studio 12 2013"  -DCMAKE_GENERATOR_TOOLSET=v120_xp -DZLIB_LIBRARY=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.11\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.11 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%APPVEYOR_BUILD_FOLDER%\Bz\WTL91_5321_Final\Include\"" ..
+- cmake -G "Visual Studio 12 2013"  -DCMAKE_GENERATOR_TOOLSET=v120_xp -DZLIB_LIBRARY=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%APPVEYOR_BUILD_FOLDER%\Bz\WTL91_5321_Final\Include\"" ..
 - cmake --build . --config Release
 - cd ..
-- cd zlib-1.2.11
+- cd zlib-1.2.12
 - md build64
 - cd build64
 - cmake -G "Visual Studio 12 2013 Win64" -DBUILD_SHARED_LIBS=OFF -DCMAKE_GENERATOR_TOOLSET=v120_xp -D CMAKE_C_FLAGS_RELEASE:STRING="/MT /Os /GF /GL" ..
@@ -45,7 +45,7 @@ build_script:
 - cd ..
 - md build64
 - cd build64
-- cmake -G "Visual Studio 12 2013 Win64"  -DCMAKE_GENERATOR_TOOLSET=v120_xp -DZLIB_LIBRARY=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.11\build64\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.11 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%APPVEYOR_BUILD_FOLDER%\Bz\WTL91_5321_Final\Include\"" ..
+- cmake -G "Visual Studio 12 2013 Win64"  -DCMAKE_GENERATOR_TOOLSET=v120_xp -DZLIB_LIBRARY=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12\build64\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%APPVEYOR_BUILD_FOLDER%\Bz\WTL91_5321_Final\Include\"" ..
 - cmake --build . --config Release
 - cd ..
 - cd nsis
