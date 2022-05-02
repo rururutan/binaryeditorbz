@@ -20,7 +20,7 @@ build_script:
 - patch -p1 -l --binary < ..\atlscrl.h.915321.patch
 - unix2dos include\atlscrl.h
 - cd ..
-- appveyor DownloadFile https://zlib.net/zlib1211.zip
+- appveyor DownloadFile https://zlib.net/zlib1212.zip
 - 7z x zlib1211.zip > NUL
 - cd zlib-1.2.11
 - md build
