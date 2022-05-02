@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ran1b146csojgck3?svg=true)](https://ci.appveyor.com/project/tamachan/binaryeditorbz-qxxwa)
 
-## [ダウンロードへ移動→](https://gitlab.com/devill.tamachan/binaryeditorbz/releases)
+## [ダウンロードへ移動→](https://gitlab.com/devill.tamachan/binaryeditorbz/-/releases)
 
 ## [ヘルプへ移動→](http://devil-tamachan.github.io/BZDoc/)
 
