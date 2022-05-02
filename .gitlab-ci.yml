@@ -18,7 +18,7 @@ build:
   stage: build
   script:
     - echo "running scripts in the build job"
-    - choco install gnuwin
+    - choco install -y gnuwin
     - cd Bz
     - 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
     - dos2unix atlscrl.h.patch
@@ -27,7 +27,7 @@ build:
     - patch -p1 -l --binary < ..\atlscrl.h.915321.patch
     - unix2dos include\atlscrl.h
     - cd ..
-    - appveyor DownloadFile https://zlib.net/zlib1212.zip
+    - wget https://zlib.net/zlib1212.zip
     - 7z x zlib1212.zip > NUL
     - cd zlib-1.2.12
     - md build
@@ -39,7 +39,7 @@ build:
     - cd ..
     - md build
     - cd build
-    - cmake -G "Visual Studio 16 2019" -A win32 -DZLIB_LIBRARY=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%APPVEYOR_BUILD_FOLDER%\Bz\WTL91_5321_Final\Include\"" ..
+    - cmake -G "Visual Studio 16 2019" -A win32 -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%CI_BUILDS_DIR%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%CI_BUILDS_DIR%\Bz\WTL91_5321_Final\Include\"" ..
     - cmake --build . --config Release
     - cd ..
     - cd zlib-1.2.12
@@ -52,7 +52,7 @@ build:
     - cd ..
     - md build64
     - cd build64
-    - cmake -G "Visual Studio 16 2019" -A x64 -DZLIB_LIBRARY=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12\build64\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%APPVEYOR_BUILD_FOLDER%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%APPVEYOR_BUILD_FOLDER%\Bz\WTL91_5321_Final\Include\"" ..
+    - cmake -G "Visual Studio 16 2019" -A x64 -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1.2.12\build64\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%CI_BUILDS_DIR%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%CI_BUILDS_DIR%\Bz\WTL91_5321_Final\Include\"" ..
     - cmake --build . --config Release
     - cd ..
     - cd nsis
