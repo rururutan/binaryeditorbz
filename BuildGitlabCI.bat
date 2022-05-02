@@ -1,4 +1,5 @@
 echo "running scripts in the build job"
+echo %CI_BUILDS_DIR%
 choco install -y patch
 choco install -y dos2unix
 choco install -y cmake
