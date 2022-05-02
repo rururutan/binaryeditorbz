@@ -53,3 +53,13 @@ build_script:
 artifacts:
 - path: 'Bz\NSIS\BzTest.exe'
   name: installer
+deploy:
+  - provider: Environment
+    name: production
+    on:
+      branch: master
+
+  - provider: Environment
+    name: production
+    on:
+      APPVEYOR_REPO_TAG: true
