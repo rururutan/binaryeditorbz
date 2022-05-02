@@ -10,8 +10,8 @@ dos2unix include\atlscrl.h
 patch -p1 -l --binary < ..\atlscrl.h.915321.patch
 unix2dos include\atlscrl.h
 cd ..
-wget https://zlib.net/zlib1212.zip
-7z x zlib1212.zip > NUL
+curl -O https://zlib.net/zlib1212.zip
+7z x zlib1212.zip
 cd zlib-1.2.12
 md build
 cd build
