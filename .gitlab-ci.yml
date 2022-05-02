@@ -17,7 +17,7 @@ build:
     - .shared_windows_runners
   stage: build
   script:
-    - $env:Path += ';C:\Program Files\CMake\bin'
+    - $env:Path += ';C:\Program Files\CMake\bin;C:\Program Files (x86)\NSIS'
     - ./BuildGitlabCI.bat
   artifacts:
     paths:

@@ -14,6 +14,8 @@ cd ..
 curl -O https://zlib.net/zlib1212.zip
 7z x zlib1212.zip
 cd zlib-1.2.12
+vcpkg install atlmfc
+vcpkg integrate install
 md build
 cd build
 cmake -G "Visual Studio 16 2019" -A win32 -DBUILD_SHARED_LIBS=OFF -D CMAKE_C_FLAGS_RELEASE:STRING="/MT /Os /GF /GL" ..
@@ -40,4 +42,5 @@ cmake -G "Visual Studio 16 2019" -A x64 -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1
 cmake --build . --config Release
 cd ..
 cd nsis
+choco install nsis
 makensis.exe /X"SetCompressor /SOLID lzma" /X"OutFile BzTest.exe" setupTest.nsi
