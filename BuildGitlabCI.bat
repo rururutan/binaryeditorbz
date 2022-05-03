@@ -1,8 +1,6 @@
 echo "running scripts in the build job"
 echo %CI_BUILDS_DIR%
-choco install -y patch
-choco install -y dos2unix
-choco install -y cmake
+choco install -y patch dos2unix cmake nsis
 cd Bz
 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
 dos2unix atlscrl.h.patch
@@ -42,5 +40,4 @@ cmake -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/
 cmake --build . --config Release
 cd ..
 cd nsis
-choco install nsis
 makensis.exe /X"SetCompressor /SOLID lzma" /X"OutFile BzTest.exe" setupTest.nsi
