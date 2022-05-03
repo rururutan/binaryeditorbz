@@ -1,6 +1,5 @@
 echo "running scripts in the build job"
 echo %CI_BUILDS_DIR%
-choco install -y patch dos2unix cmake nsis
 cd Bz
 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
 dos2unix atlscrl.h.patch
@@ -12,8 +11,6 @@ cd ..
 curl -O https://zlib.net/zlib1212.zip
 7z x zlib1212.zip
 cd zlib-1.2.12
-vcpkg install atlmfc
-vcpkg integrate install
 md build
 cd build
 cmake -G "Visual Studio 16 2019" -A win32 -DBUILD_SHARED_LIBS=OFF -D CMAKE_C_FLAGS_RELEASE:STRING="/MT /Os /GF /GL" ..
