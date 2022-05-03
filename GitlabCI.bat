@@ -1,14 +1,6 @@
-
-"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Buildtools" --add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.ATLMFC --downloadThenInstall --quiet --norestart
-
-
-dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.26.28801"
-dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\"
-dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.16.11\atl\"
-
+choco upgrade visualstudio2019buildtools -y --package-parameters "--add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.ATLMFC --quiet --norestart" --force
 choco install -y --no-progress patch dos2unix cmake nsis
 echo "running scripts in the build job"
-echo %CI_BUILDS_DIR%
 cd Bz
 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
 dos2unix atlscrl.h.patch
