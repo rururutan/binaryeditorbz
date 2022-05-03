@@ -1,5 +1,4 @@
-choco upgrade visualstudio2019buildtools -y --package-parameters "--add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.ATLMFC --quiet --norestart" --force
-dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.26.28801"
+
 "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Buildtools" --add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.ATLMFC --downloadThenInstall --quiet --norestart
 
 
@@ -30,7 +29,7 @@ cd ..
 cd ..
 md build
 cd build
-cmake -G "Visual Studio 16 2019" -A win32 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%CI_BUILDS_DIR%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I%CI_BUILDS_DIR%\Bz\WTL91_5321_Final\Include" ..
+cmake -G "Visual Studio 16 2019" -A win32 -DZLIB_LIBRARY=%cd%\..\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%cd%\..\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I%cd%\..\WTL91_5321_Final\Include" ..
 cmake --build . --config Release
 cd ..
 cd zlib-1.2.12
@@ -43,7 +42,7 @@ cd ..
 cd ..
 md build64
 cd build64
-cmake -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1.2.12\build64\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%CI_BUILDS_DIR%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I%CI_BUILDS_DIR%\Bz\WTL91_5321_Final\Include" ..
+cmake -G "Visual Studio 16 2019" -A x64 -DZLIB_LIBRARY=%cd%\..\zlib-1.2.12\build64\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%cd%\..\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I%cd%\..\WTL91_5321_Final\Include" ..
 cmake --build . --config Release
 cd ..
 cd nsis
