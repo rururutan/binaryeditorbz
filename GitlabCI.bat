@@ -1,4 +1,4 @@
-"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Buildtools" --add Microsoft.VisualStudio.Component.VC.v142.ATL --downloadThenInstall --quiet --norestart --wait
+"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Buildtools" --add Microsoft.VisualStudio.Component.VC.14.29.16.11.ATL --downloadThenInstall --quiet --norestart --wait
 choco install -y --no-progress patch dos2unix cmake nsis
 echo "running scripts in the build job"
 echo %CI_BUILDS_DIR%
