@@ -20,7 +20,7 @@ cd ..
 cd ..
 md build
 cd build
-cmake -G "Visual Studio 16 2019" -A win32 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%CI_BUILDS_DIR%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I\"%CI_BUILDS_DIR%\Bz\WTL91_5321_Final\Include\"" ..
+cmake -G "Visual Studio 16 2019" -A win32 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DZLIB_LIBRARY=%CI_BUILDS_DIR%\Bz\zlib-1.2.12\build\Release\zlibstatic.lib -DZLIB_INCLUDE_DIR=%CI_BUILDS_DIR%\Bz\zlib-1.2.12 -DBUILD_SHARED_LIBS=OFF  -D CMAKE_CXX_FLAGS_RELEASE:STRING="/MT /Os /GF /GL /I%CI_BUILDS_DIR%\Bz\WTL91_5321_Final\Include\" ..
 cmake --build . --config Release
 cd ..
 cd zlib-1.2.12
