@@ -11,7 +11,7 @@ before_script:
  - Set-Variable -Name "time" -Value (date -Format "%H:%m")
  - echo ${time}
  - echo "started by ${GITLAB_USER_NAME}"
- - "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Buildtools" --add Microsoft.VisualStudio.Component.VC.ATL --downloadThenInstall --quiet
+ - ./PrepareGitlabCI.bat
  - choco install -y --no-progress patch dos2unix cmake nsis
 
 build:
