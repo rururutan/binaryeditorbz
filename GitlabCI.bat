@@ -1,5 +1,11 @@
 choco upgrade visualstudio2019buildtools -y --package-parameters "--add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.ATLMFC --quiet --norestart" --force
+
+dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.26.28801"
+dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\"
+dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.16.11\atl\"
+
 choco install -y --no-progress patch dos2unix cmake nsis
+refreshenv
 echo "running scripts in the build job"
 cd Bz
 7z x WTL91_5321_Final.zip -o"WTL91_5321_Final"
