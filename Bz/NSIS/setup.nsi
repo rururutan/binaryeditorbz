@@ -7,7 +7,7 @@ RequestExecutionLevel admin
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "BzEditor"
-!define PRODUCT_VERSION "1.9.8.6"
+!define PRODUCT_VERSION "1.9.8.7"
 !define PRODUCT_PUBLISHER "tamachan"
 !define PRODUCT_WEB_SITE "https://github.com/devil-tamachan/binaryeditorbz"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\${PRODUCT_NAME}"
