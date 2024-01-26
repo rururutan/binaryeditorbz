@@ -1,0 +1,11 @@
+--- WTL10_10320_Release/Include/atlscrl.h	2020-11-15 19:00:02.000000000 +0900
++++ WTL10_10320_Releasep/Include/atlscrl.h	2024-01-26 19:31:14.846072400 +0900
+@@ -673,7 +673,7 @@
+ 		if(pT->AdjustScrollOffset(x, y))
+ 		{
+ 			// Children will be moved in SetScrollOffset, if needed
+-			pT->ScrollWindowEx(m_ptOffset.x - x, m_ptOffset.y - y, (m_uScrollFlags & ~SCRL_SCROLLCHILDREN));
++			pT->ScrollWindowEx(-(m_ptOffset.x - x), -(m_ptOffset.y - y), (m_uScrollFlags & ~SCRL_SCROLLCHILDREN));
+ 			SetScrollOffset(x, y, FALSE);
+ 		}
+ 	}
