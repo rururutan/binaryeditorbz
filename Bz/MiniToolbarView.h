@@ -86,7 +86,7 @@ public:
 
 	BOOL OnEraseBkGnd(WTL::CDCHandle dc)
 	{
-    WTL::CRect rect;
+        ::CRect rect;
 		dc.GetClipBox(&rect);
 		dc.FillRect(rect, COLOR_BTNFACE);
 		return TRUE;

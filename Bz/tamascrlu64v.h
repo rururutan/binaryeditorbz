@@ -170,7 +170,7 @@ public:
 		T* pT = static_cast<T*>(this);
 		ATLASSERT(::IsWindow(pT->m_hWnd));
 
-    WTL::CRect clientRect;
+    ::CRect clientRect;
     pT->GetClientRect(clientRect);
     _OnSize(clientRect.right, clientRect.bottom);
   }
@@ -342,7 +342,7 @@ public:
         if(diffU64V > INT_MAX/m_cellV)diffU64V=INT_MAX/m_cellV;
         dy = -(int)(diffU64V*m_cellV);
       }
-      WTL::CRect rectClient;
+      ::CRect rectClient;
       pT->GetClientRect(rectClient);
       if(dy)rectClient.top = m_ptHome.y*m_cellV;
       ATLTRACE("SetScrollPos: y=%d, Dy: %d, rectClient.top=%d, %d\n", m_ptOffset.y, dy, rectClient.top, m_ptHome.y*m_cellV);

@@ -142,7 +142,7 @@ public:
 		ATLASSERT(::IsWindow(hWndPane));
 		unsigned int idx = CalcSplitIndex(x,y);
 		m_hWndPane[idx] = hWndPane;
-    WTL::CRect rect;
+		::CRect rect;
 		::GetWindowRect(hWndPane, &rect);
 		m_idealSize[idx][0] = rect.Width();
 		m_idealSize[idx][1] = rect.Height();
@@ -176,19 +176,19 @@ public:
   void OnPaint(WTL::CDCHandle /*dc*/)
 	{
     WTL::CPaintDC dc(m_hWnd);
-    WTL::CRect rect;
+    ::CRect rect;
 		dc.GetClipBox(&rect);
 		ATLTRACE("WM_PAINT: m_bPressLButton=%s, m_selectBorderX=%d, m_selectBorderY=%d\n",m_bPressLButton?"TRUE":"FALSE", m_selectBorderX, m_selectBorderY);
 		
 		dc.FillRect(rect, m_borderBrush/*COLOR_BTNFACE*/);
 		if(m_bPressLButton && m_selectBorderX!=-1)
 		{
-      WTL::CRect barX(m_borderRealX[m_selectBorderX]-BORDERWIDTH, 0, m_borderRealX[m_selectBorderX], rect.bottom);
+			::CRect barX(m_borderRealX[m_selectBorderX]-BORDERWIDTH, 0, m_borderRealX[m_selectBorderX], rect.bottom);
 			dc.FillRect(barX, m_halftoneBrush);
 		}
 		if(m_bPressLButton && m_selectBorderY!=-1)
 		{
-      WTL::CRect barY(0, m_borderRealY[m_selectBorderY]-BORDERWIDTH, rect.right, m_borderRealY[m_selectBorderY]);
+			::CRect barY(0, m_borderRealY[m_selectBorderY]-BORDERWIDTH, rect.right, m_borderRealY[m_selectBorderY]);
 			dc.FillRect(barY, m_halftoneBrush);
 		}
 	}
@@ -251,7 +251,7 @@ public:
 	void UpdateSplitLayout()
 	{
 		if(!m_bInitSplit)return;
-    WTL::CRect rect;
+		::CRect rect;
 		if(!GetClientRect(&rect))return;
 		m_borderIdealX[0] = m_borderIdealY[0] = m_borderRealX[0] = m_borderRealY[0] = 0;
 		m_borderIdealX[m_paneW] = m_borderRealX[m_paneW] = rect.Width();
@@ -352,7 +352,7 @@ public:
 		else if(bBorderY)SetCursor(LoadCursor(NULL, IDC_SIZENS));
 		return (bBorderX || bBorderY);
 	}
-  void OnLButtonDown(UINT nFlags, WTL::CPoint point)
+  void OnLButtonDown(UINT nFlags, ::CPoint point)
 	{
 		//POINT pt = point;
 		//m_selectBorderX = IsBorderX(pt);
@@ -362,12 +362,12 @@ public:
 		Invalidate();
 		//ATLTRACE("WM_LBUTTONDOWN: pt(%d,%d) m_selectBorderX = %d, m_selectBorderY = %d\n",point.x,point.y, m_selectBorderX, m_selectBorderY);
 	}
-  void OnMouseMove(UINT nFlags, WTL::CPoint point)
+  void OnMouseMove(UINT nFlags, ::CPoint point)
 	{
 		if(m_bPressLButton)
 		{
       int x3=0, y3=0, x2=m_paneW, y2=m_paneH;
-      WTL::CRect rect;
+      ::CRect rect;
       GetClientRect(&rect);
 			if(m_selectBorderX!=-1)
 			{
@@ -411,7 +411,7 @@ public:
 			Invalidate();
 		}
 	}
-  void OnLButtonUp(UINT nFlags, WTL::CPoint point)
+  void OnLButtonUp(UINT nFlags, ::CPoint point)
 	{
 		m_selectBorderX = m_selectBorderY = -1;
 		m_bPressLButton = FALSE;

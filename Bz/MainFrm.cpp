@@ -745,7 +745,7 @@ BOOL CMainFrame::ResetSplitter()
       else if(m_nSplitView==ID_VIEW_SPLIT_V)m_pWndSplitter->SetSplitterPosX(1, 620);
       if(m_nSplitView==ID_VIEW_SPLIT_H)
       {
-        WTL::CRect r;
+        ::CRect r;
         if(m_pWndSplitter->GetWindowRect(&r))m_pWndSplitter->SetSplitterPosY(1, r.Height()/2);
         else m_pWndSplitter->SetSplitterPosY(1, 200);
       }
@@ -928,9 +928,9 @@ void CMainFrame::ResetWindowWidth()
     }
     newSize = bzMax + subMax;
   }
-  WTL::CRect rFrame;
+  ::CRect rFrame;
 	GetWindowRect(rFrame);
-  WTL::CRect rScreen;
+  ::CRect rScreen;
   SystemParametersInfo(SPI_GETWORKAREA, 0, (LPRECT)rScreen, 0);
   rFrame.x2 = rFrame.x1 + newSize + wEdge*(dwViewCnt+1) + GetSystemMetrics(SM_CXVSCROLL)*dwViewCnt + (bSubView?wEdge*dwViewCnt:0);
   if(rFrame.Width() > rScreen.Width())rFrame.x2 = rFrame.x1 + rScreen.Width();

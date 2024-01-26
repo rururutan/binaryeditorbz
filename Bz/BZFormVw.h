@@ -339,7 +339,7 @@ public:
 
   int GetHeaderColWidth(int nIndex)
   {
-      WTL::CRect rect;
+      ::CRect rect;
       m_headerMember.GetItemRect(nIndex, rect);
       return rect.Width();
   }
@@ -351,14 +351,14 @@ public:
       m_headerMember.SetItem(nIndex, &hdi);
   }
 
-  void OnSize(UINT nType, WTL::CSize size)
+  void OnSize(UINT nType, ::CSize size)
   {
     //SetScrollSizes(MM_TEXT, size);
     int cx = size.cx;
     int cy = size.cy;
 
     if(m_listTag.m_hWnd && m_listTag.m_hWnd) {
-      WTL::CRect rForm, rTag, rMember, rStatic;
+      ::CRect rForm, rTag, rMember, rStatic;
       GetWindowRect(rForm);
       m_listTag.GetWindowRect(rTag);
       m_treeListMember.GetWindowRect(rMember);
@@ -389,7 +389,7 @@ public:
       if(cxLabel > 0)
         SetHeaderColWidth(MBRCOL2_LABEL, cxLabel);
 
-      WTL::CRect rTagAll;
+      ::CRect rTagAll;
       CWindow pWndTagAll = GetDlgItem(IDB_TAGALL);
       pWndTagAll.GetWindowRect(rTagAll);
       ScreenToClient(rTagAll);

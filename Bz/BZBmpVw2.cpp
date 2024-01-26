@@ -91,7 +91,7 @@ void Make8bitBITMAPINFOHEADER(LPBITMAPINFOHEADER lpbi, LONG w, LONG h)
 }
 
 
-void CBZBmpView2::OnLButtonDown(UINT nFlags, WTL::CPoint point)
+void CBZBmpView2::OnLButtonDown(UINT nFlags, ::CPoint point)
 {
   if(!bEnable)return;
 
@@ -111,7 +111,7 @@ void CBZBmpView2::OnLButtonDown(UINT nFlags, WTL::CPoint point)
     if(pView)pView->MoveCaretTo(currentAddress);
   }
 }
-void CBZBmpView2::OnMouseMove(UINT nFlags, WTL::CPoint point)
+void CBZBmpView2::OnMouseMove(UINT nFlags, ::CPoint point)
 {
   if(!bEnable)return;
 
@@ -293,7 +293,7 @@ void CBZBmpView2::OnInitialUpdate()
 
 void CBZBmpView2::DoPaint(WTL::CDCHandle dc)
 {
-  WTL::CRect rClipOrig;
+  ::CRect rClipOrig;
   dc.GetClipBox(rClipOrig);
   dc.FillSolidRect(rClipOrig, g_bgBmpView & 0xFFFFFF);
 

@@ -212,7 +212,7 @@ public:
       tbinfo.cx = 180;
       tbinfo.idCommand = IDT_FINDBOX;
       m_mainToolbar.SetButtonInfo(idxFindBox, &tbinfo);
-      WTL::CRect rectFindBox;
+      ::CRect rectFindBox;
       m_mainToolbar.GetItemRect(idxFindBox, rectFindBox);
       m_combo_toolbar.Create(m_mainToolbar, rectFindBox, NULL
         , WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWN | CBS_AUTOHSCROLL, 0, IDT_FINDBOX);
@@ -282,7 +282,7 @@ public:
   }
   void OnShowWindow(BOOL bShow, UINT nStatus);
   
-  void OnSize(UINT nType, WTL::CSize size)
+  void OnSize(UINT nType, ::CSize size)
   {
     static UINT lastType = 0;
 		//SetMsgHandled(FALSE);
@@ -499,10 +499,10 @@ public:
       return;
     
     {
-      WTL::CRect rFrame;
+      ::CRect rFrame;
       GetWindowRect(rFrame);
 
-      int nCur, nMin;
+      //int nCur, nMin;
       switch(options.nSplitView = m_nSplitView)
       {
       case 0:

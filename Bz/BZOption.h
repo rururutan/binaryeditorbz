@@ -467,7 +467,7 @@ public:
 	int nFontSize;
 	int fFontStyle;
 	BOOL bByteOrder;
-  WTL::CPoint ptFrame;
+    ::CPoint ptFrame;
 	int nCmdShow;
 	int cyFrame;
 	int cyFrame2;
@@ -482,7 +482,7 @@ public:
 //	int  colWidth[MBRCOL_MAX];
 	int  colWidth2[MBRCOL2_MAX];
 	BOOL bLanguage;
-  WTL::CRect rMargin;
+    ::CRect rMargin;
 	DWORD dwDetectMax;
 	DWORD barState;
 	BOOL bReadOnlyOpen;

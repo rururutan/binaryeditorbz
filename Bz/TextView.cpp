@@ -548,7 +548,7 @@ void CTextView::OnEndPrinting(CDC* pDC, CPrintInfo* pInfo)
 void CTextView::SetMargin(HDC hDC)
 {
   WTL::CDCHandle cdc(hDC);
-  WTL::CRect rMargin;
+  ::CRect rMargin;
 	cdc.SetViewportOrg(0, 0);
 	GetMargin(rMargin, hDC);
 	cdc.SetViewportOrg(rMargin.x1, rMargin.y1);

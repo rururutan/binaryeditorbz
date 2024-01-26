@@ -252,9 +252,9 @@ public:
   }
 
 public:
-  void OnContextMenu(CWindow wnd, WTL::CPoint point)
+  void OnContextMenu(CWindow wnd, ::CPoint point)
   {
-    WTL::CRect rc;
+    ::CRect rc;
     GetClientRect(&rc);
     ClientToScreen(&rc);
     if(rc.PtInRect(point)){
@@ -403,7 +403,7 @@ public:
     if(!IsSystemColor(rgbBG)) {
       WTL::CBrush brushBG;
       brushBG.CreateSolidBrush(rgbBG);
-      WTL::CRect rcErase;
+      ::CRect rcErase;
       dc.GetClipBox(rcErase);
       dc.FillRect(rcErase, brushBG);
       return TRUE;
@@ -434,7 +434,7 @@ public:
     return DefWindowProc(uMsg, wParam, lParam);
   }
 
-  void OnMButtonDown(UINT nFlags, WTL::CPoint point)
+  void OnMButtonDown(UINT nFlags, ::CPoint point)
   {
     Activate();
     m_bCaretOnChar = !m_bCaretOnChar;
@@ -442,7 +442,7 @@ public:
     UpdateStatusBar();
     SetMsgHandled(FALSE);
   }
-  void OnLButtonDown(UINT nFlags, WTL::CPoint point)
+  void OnLButtonDown(UINT nFlags, ::CPoint point)
   {
     Activate();
     if(m_bBlock) {
@@ -468,7 +468,7 @@ public:
     UpdateStatusBar();
     SetMsgHandled(FALSE);
   }
-  void OnLButtonUp(UINT nFlags, WTL::CPoint point)
+  void OnLButtonUp(UINT nFlags, ::CPoint point)
   {
     ReleaseCapture();
     if(m_timer) {
@@ -478,13 +478,13 @@ public:
     UpdateStatusBar();
     SetMsgHandled(FALSE);
   }
-  void OnLButtonDblClk(UINT nFlags, WTL::CPoint point)
+  void OnLButtonDblClk(UINT nFlags, ::CPoint point)
   {
     OnDoubleClick();
     UpdateStatusBar();
     SetMsgHandled(FALSE);
   }
-  void OnMouseMove(UINT nFlags, WTL::CPoint point)
+  void OnMouseMove(UINT nFlags, ::CPoint point)
   {
     if(nFlags & MK_LBUTTON) {
       UINT64 ofs = PointToOffset(point);
@@ -515,7 +515,7 @@ public:
     UpdateStatusBar();
     SetMsgHandled(FALSE);
   }
-  BOOL OnMouseWheel(UINT nFlags, short zDelta, WTL::CPoint pt)
+  BOOL OnMouseWheel(UINT nFlags, short zDelta, ::CPoint pt)
   {
     //SetMsgHandled(false);
     //BOOL ret = CTextView::OnMouseWheel(nFlags, zDelta, pt);
@@ -677,7 +677,7 @@ private:
 	void	DrawGrid(HDC hDC, RECT& rClip);
 	void	DrawDummyCaret(HDC hDC);
 	BOOL	DrawCaret(int *pScrolldy = NULL);
-	UINT64	PointToOffset(WTL::CPoint pt);
+	UINT64	PointToOffset(::CPoint pt);
 	void	CutOrCopy(CutMode mode);
 public:
 	void	MoveCaretTo(UINT64 dwNewCaret/*, bool bFirst=true*/);

@@ -90,7 +90,7 @@ public:
     return FALSE;
   }
 
-  void OnSize(UINT nType, WTL::CSize size)
+  void OnSize(UINT nType, ::CSize size)
   {
     SetMsgHandled(false);
     if(bFirst)
@@ -105,7 +105,7 @@ public:
     return false;
   }
 
-  void OnLButtonDown(UINT nFlags, WTL::CPoint point);
+  void OnLButtonDown(UINT nFlags, ::CPoint point);
   
   void ReloadCustomPallets()
   {
@@ -132,7 +132,7 @@ public:
       }
   }
 
-  void OnRButtonDown(UINT nFlags, WTL::CPoint point)
+  void OnRButtonDown(UINT nFlags, ::CPoint point)
   {
     if(!bEnable)return;
 
@@ -182,16 +182,16 @@ public:
       pMenu.AppendMenu(options.lastPalletName==fileName && options.nBmpPallet>=CUSTOMPALLET && options.nBmpColorWidth==8 ? MF_STRING | MF_CHECKED : MF_STRING, ID_BMPVIEW_CUSTOMPALETTE_START+i, fileName);
     }
 
-    WTL::CPoint pt;
+    ::CPoint pt;
     GetCursorPos(&pt);
     pMenu.TrackPopupMenu(0, pt.x, pt.y, m_hWnd);
 
     SetMsgHandled(FALSE);//CScrollView::OnRButtonDown(nFlags, point);
   }
 
-  void OnMouseMove(UINT nFlags, WTL::CPoint point);
+  void OnMouseMove(UINT nFlags, ::CPoint point);
 
-  void OnLButtonUp(UINT nFlags, WTL::CPoint point)
+  void OnLButtonUp(UINT nFlags, ::CPoint point)
   {
     m_isLButtonDown = false;
   }

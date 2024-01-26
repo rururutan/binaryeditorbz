@@ -688,7 +688,7 @@ void CBZView::Update()
     //SetScrollSizeU64V(cViewX, cViewY);
     SetScrollPage(3,PAGESKIP);
     SetScrollLine(1,1);
-	SetScrollHome(WTL::CPoint(0, DUMP_Y));
+	SetScrollHome(::CPoint(0, DUMP_Y));
     ScrollTop();
     ScrollAllLeft();
 	m_dwCaret = m_dwOldCaret = m_dwBlock = m_dwStruct = 0;
@@ -766,7 +766,7 @@ void CBZView::PrePrintPage/*BeginPrintJob(HDC hDC)*/(UINT nPage, HDC hDC)
     CTextView::BeginPrintJob(hDC);
 
     WTL::CDCHandle cdc(hDC);
-    WTL::CRect rMargin;
+    ::CRect rMargin;
     GetMargin(rMargin, hDC);
     POINT pt;
     pt.x = cdc.GetDeviceCaps(HORZRES) - rMargin.left - rMargin.right;
@@ -886,7 +886,7 @@ void CBZView::_OnPaint(WTL::CDCHandle dc, LPRECT lpUpdateRect, BOOL bPrint)
 		DrawHeader(ofs);
   } else {
     if(dc==NULL)return;
-      WTL::CRect rClip;
+		::CRect rClip;
     if(lpUpdateRect)
     {
       //ATLTRACE("lpUpdateRect = (%d,%d,%d,%d)\n", lpUpdateRect->left, lpUpdateRect->right, lpUpdateRect->top, lpUpdateRect->bottom);
@@ -1431,9 +1431,9 @@ BOOL CBZView::DrawCaret(int *pScrolldy /*=NULL*/)
 	return bDraw;
 }
 
-UINT64 CBZView::PointToOffset(WTL::CPoint pt)
+UINT64 CBZView::PointToOffset(::CPoint pt)
 {
-  WTL::CRect r;
+	::CRect r;
 	GetClientRect(&r);
 	if(!r.PtInRect(pt))
 		return _UI64_MAX;

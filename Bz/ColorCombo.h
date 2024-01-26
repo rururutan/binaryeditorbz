@@ -61,7 +61,7 @@ public:
 		COMBOBOXINFO cmbInfo = {0};
 		cmbInfo.cbSize = sizeof(COMBOBOXINFO);
 		GetComboBoxInfo(&cmbInfo);
-		WTL::CRect rect(cmbInfo.rcItem);
+		::CRect rect(cmbInfo.rcItem);
 		InvalidateRect(rect, 0);
 		WTL::CPaintDC dc(m_hWnd);
 		_DrawItem(GetCurSel(), dc, rect, FALSE);
@@ -92,11 +92,11 @@ public:
 
 	void DrawItem(LPDRAWITEMSTRUCT lpdis)
 	{
-		WTL::CRect rcItem(&(lpdis->rcItem));
+		::CRect rcItem(&(lpdis->rcItem));
 		_DrawItem(lpdis->itemID, lpdis->hDC, rcItem, lpdis->itemState & ODS_SELECTED);
 	}
 
-	void _DrawItem(int iItem, HDC hdc, WTL::CRect &rcItem, BOOL bSelected)
+	void _DrawItem(int iItem, HDC hdc, ::CRect &rcItem, BOOL bSelected)
 	{
 		WTL::CDCHandle dc(hdc);
 		dc.FillSolidRect(rcItem, RGB(255, 255, 255));
