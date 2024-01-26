@@ -93,21 +93,21 @@ BOOL CBZDoc2::OnUpdateFileSaveAs()
 
 
 
-DWORD CBZDoc2::PasteFromClipboard(DWORD dwStart, BOOL bIns)
+UINT64 CBZDoc2::PasteFromClipboard(UINT64 dwStart, BOOL bIns)
 {
   if(!m_pSFC || !OpenClipboard(NULL))goto ERR_PASTECLIP1;//AfxGetMainWnd()->OpenClipboard();
   HGLOBAL hMem;
-  DWORD dwSize;
+  UINT64 dwSize;
   LPBYTE pMem;
   if(hMem = ::GetClipboardData(RegisterClipboardFormat(_T("BinaryData2")))) {
-    DWORD dwMemSize = GlobalSize(hMem);
+    SIZE_T dwMemSize = GlobalSize(hMem);
     pMem = (LPBYTE)::GlobalLock(hMem);
     if(!pMem)goto ERR_PASTECLIP3;
     dwSize = *((DWORD*)(pMem));
     if(dwMemSize < sizeof(DWORD) || dwSize > dwMemSize-sizeof(DWORD))goto ERR_PASTECLIP3;
     pMem += sizeof(DWORD);
   } else if(hMem = GetClipboardData(CF_TEXT)) {
-    DWORD dwMemSize = GlobalSize(hMem);
+    SIZE_T dwMemSize = GlobalSize(hMem);
     pMem = (LPBYTE)::GlobalLock(hMem);
     if(!pMem)goto ERR_PASTECLIP3;
     dwSize = strnlen_s((LPCSTR)pMem, dwMemSize);
@@ -147,7 +147,7 @@ ERR_PASTECLIP1:
   return 0;
 }
 
-BOOL CBZDoc2::CopyToClipboard(DWORD dwStart, DWORD dwSize)
+BOOL CBZDoc2::CopyToClipboard(UINT64 dwStart, DWORD dwSize)
 {
   if(!m_pSFC)return FALSE;
   HGLOBAL hMemTxt = ::GlobalAlloc(GMEM_MOVEABLE, dwSize + 1);

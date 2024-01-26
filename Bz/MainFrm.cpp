@@ -451,7 +451,7 @@ void CMainFrame::_OnViewSplit(int nID)
 LRESULT CMainFrame::OnStatusBarClicked(LPNMHDR pnmh)
 {
   NMMOUSE *pmmouse = (NMMOUSE *)pnmh;
-  int paneIdx = pmmouse->dwItemSpec;
+  DWORD_PTR paneIdx = pmmouse->dwItemSpec;
   
   CBZView *pBZView = GetActiveBZView();
   if(pBZView)

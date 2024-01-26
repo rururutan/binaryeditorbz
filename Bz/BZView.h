@@ -270,7 +270,7 @@ public:
     LOGFONT logFont;
     m_pFont->GetLogFont(&logFont);
     WTL::CFontDialog aFontDlg(&logFont, CF_SCREENFONTS | CF_FIXEDPITCHONLY | CF_NOVERTFONTS | CF_ANSIONLY); // ###1.5
-    int rDlg = aFontDlg.DoModal();
+    INT_PTR rDlg = aFontDlg.DoModal();
     if(rDlg == IDOK) {
       options.sFontName = aFontDlg.GetFaceName();
       options.fFontStyle = aFontDlg.IsBold() + aFontDlg.IsItalic()*2;
@@ -636,7 +636,7 @@ private:
 	UINT64	m_dwOldCaret;
 	BOOL	m_bCaretOnChar;
 	BOOL	m_bEnterVal;
-	int		m_timer;
+	INT_PTR	m_timer;
 	UINT64	m_dwPrint;
 public:
 	CBZDoc2*	m_pDoc;

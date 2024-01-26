@@ -72,8 +72,8 @@ public:
     return retStr;
   }
 
-  DWORD PasteFromClipboard(DWORD dwStart, BOOL bIns);
-  BOOL CopyToClipboard(DWORD dwStart, DWORD dwSize);
+  UINT64 PasteFromClipboard(UINT64 dwStart, BOOL bIns);
+  BOOL CopyToClipboard(UINT64 dwStart, DWORD dwSize);
 
 public:
   void  CleanInvalidMark();

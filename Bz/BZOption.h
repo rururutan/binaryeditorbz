@@ -549,7 +549,7 @@ public:
   }
   BOOL GetProfileBinary2(CRegKey &key, LPCTSTR lpszEntry, LPVOID pData, ULONG nBytesMax)
   {
-    ULONG nBytes;
+    ULONG nBytes = 0;
     if(key.QueryBinaryValue(lpszEntry, NULL, &nBytes)==ERROR_SUCCESS && nBytes>0)
     {
       LPBYTE pBuffer = (LPBYTE)malloc(nBytes);

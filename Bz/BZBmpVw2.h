@@ -175,8 +175,8 @@ public:
       pMenu.CheckMenuItem(ID_BMPVIEW_ADDRESSTOOLTIP, MF_BYCOMMAND | MF_CHECKED);
 
     ReloadCustomPallets();
-    int iPallets = pallets.GetCount();
-    for(int i=0;i<iPallets;i++)
+    size_t iPallets = pallets.GetCount();
+    for(size_t i=0;i<iPallets;i++)
     {
       CString fileName(PathFindFileName(pallets[i].path));
       pMenu.AppendMenu(options.lastPalletName==fileName && options.nBmpPallet>=CUSTOMPALLET && options.nBmpColorWidth==8 ? MF_STRING | MF_CHECKED : MF_STRING, ID_BMPVIEW_CUSTOMPALETTE_START+i, fileName);
@@ -356,6 +356,7 @@ err_LoadAplPallet256:
 
   CBZBmpView2()
   {
+    m_cBmpY64 = 0;
     m_lpbi = NULL;
     m_tooltipLastAddress = 0xffffffff;
     m_isLButtonDown = false;

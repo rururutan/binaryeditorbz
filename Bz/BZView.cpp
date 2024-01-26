@@ -352,7 +352,7 @@ void CBZView::OnEditRedo(UINT uNotifyCode, int nID, CWindow wndCtl)
   }
 void CBZView::OnEditPaste(UINT uNotifyCode, int nID, CWindow wndCtl)
   {
-    DWORD dwPaste = m_pDoc->PasteFromClipboard(m_dwCaret, m_bIns);
+    UINT64 dwPaste = m_pDoc->PasteFromClipboard(m_dwCaret, m_bIns);
     if(dwPaste) {
       m_dwOldCaret = m_dwCaret;
       m_dwCaret = dwPaste;
