@@ -63,6 +63,15 @@
     <ClCompile Include="portableCfg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BZDpi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hsv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tamasplit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BZ.rc">
@@ -162,6 +171,18 @@
     <ClInclude Include="PortableCfg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BZDpi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BZSubView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hsv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniToolbarView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="portableCfg.re">
@@ -170,5 +191,12 @@
     <CustomBuild Include="portableCfgParser.lemon">
       <Filter>Source Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="CustomPallet.re" />
+    <CustomBuild Include="CustomPalletParser.lemon" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="Bz.exe.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
   </ItemGroup>
 </Project>
