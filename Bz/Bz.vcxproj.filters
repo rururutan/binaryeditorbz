@@ -194,9 +194,4 @@
     <CustomBuild Include="CustomPallet.re" />
     <CustomBuild Include="CustomPalletParser.lemon" />
   </ItemGroup>
-  <ItemGroup>
-    <Manifest Include="Bz.exe.manifest">
-      <Filter>Resource Files</Filter>
-    </Manifest>
-  </ItemGroup>
 </Project>

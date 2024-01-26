@@ -134,10 +134,6 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseUPX|x64'">false</LinkIncremental>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)64</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)64</TargetName>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -635,6 +631,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).c;$(ProjectDir)%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
     <None Include="ReadMe.txt" />
+    <None Include="resource" />
     <None Include="res\bmppoint.cur" />
     <None Include="res\BZ.ico" />
     <None Include="res\BZ.rc2" />
@@ -684,9 +681,6 @@
     <ClInclude Include="tamasplit.h" />
     <ClInclude Include="TextView.h" />
     <ClInclude Include="TreeListView.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Manifest Include="Bz.exe.manifest" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
