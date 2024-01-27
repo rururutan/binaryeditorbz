@@ -190,11 +190,11 @@ public:
       GetWindowPlacement(&wndpl);
       if(g_bFirstInstance)
       {
-        wndpl.rcNormalPosition.left = options.ptFrame.x;
-        int newy = options.ptFrame.y;
+        wndpl.rcNormalPosition.left = options.ptFrame.x * CBZDpi::ScaleX();
+        int newy = options.ptFrame.y * CBZDpi::ScaleY();
         wndpl.rcNormalPosition.top = (newy<0)?0:newy;
       }
-      wndpl.rcNormalPosition.bottom = wndpl.rcNormalPosition.top + (options.nSplitView==ID_VIEW_SPLIT_H && options.cyFrame2 ? options.cyFrame2 : options.cyFrame);
+      wndpl.rcNormalPosition.bottom = wndpl.rcNormalPosition.top + (options.nSplitView==ID_VIEW_SPLIT_H && options.cyFrame2 ? options.cyFrame2 : options.cyFrame) * CBZDpi::ScaleY();
       SetWindowPlacement(&wndpl);
     }
 
@@ -506,15 +506,15 @@ public:
       switch(options.nSplitView = m_nSplitView)
       {
       case 0:
-        options.cyFrame = rFrame.Height();
+        options.cyFrame = rFrame.Height() / CBZDpi::ScaleY();
         break;
       case ID_VIEW_SPLIT_H:
-        options.cyFrame2 = rFrame.Height();
+        options.cyFrame2 = rFrame.Height() / CBZDpi::ScaleY();
         //m_pSplitter->GetRowInfo(0, nCur, nMin);
         //options.ySplit = nCur;
         break;
       case ID_VIEW_SPLIT_V:
-        options.cxFrame2 = rFrame.Width();
+        options.cxFrame2 = rFrame.Width() / CBZDpi::ScaleX();
         //m_pSplitter->GetColumnInfo(0, nCur, nMin);
         //options.xSplit = nCur;
         //if(m_bBmpView || m_bStructView || m_bInspectView || m_bAnalyzerView) {
@@ -536,8 +536,8 @@ public:
   {
     WINDOWPLACEMENT wndpl;
     GetWindowPlacement(&wndpl);
-    options.ptFrame.x = wndpl.rcNormalPosition.left;
-    options.ptFrame.y = wndpl.rcNormalPosition.top;
+    options.ptFrame.x = wndpl.rcNormalPosition.left / CBZDpi::ScaleX();
+    options.ptFrame.y = wndpl.rcNormalPosition.top / CBZDpi::ScaleY();
     options.nCmdShow = wndpl.showCmd;
     options.barState = /*m_wndToolBar.IsWindowVisible()*/1 * BARSTATE_TOOL | /*m_wndStatusBar.IsWindowVisible()*/1 * BARSTATE_STATUS
       | options.barState & (BARSTATE_FULLPATH | BARSTATE_NOFLAT);
