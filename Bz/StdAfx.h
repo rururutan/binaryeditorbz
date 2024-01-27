@@ -5,9 +5,9 @@
 #define FILE_MAPPING
 
 #define VC_EXTRALEAN		// Windows ヘッダーから使用されていない部分を除外します。
-#define WINVER 0x0501 //XP
-#define _WIN32_WINNT 0x0501 //XP
-#define _WIN32_WINDOWS 0x0410 // これを Windows Me またはそれ以降のバージョン向けに適切な値に変更してください。
+#define WINVER 0x0600 //Vista
+#define _WIN32_WINNT 0x0600 //Vista
+#define _WIN32_WINDOWS 0x0600 // これを Windows Me またはそれ以降のバージョン向けに適切な値に変更してください。
 #define _WIN32_IE 0x0600	// これを IE の他のバージョン向けに適切な値に変更してください。
 
 #define ISOLATION_AWARE_ENABLED 1
