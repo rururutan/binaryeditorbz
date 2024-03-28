@@ -932,7 +932,13 @@ void CMainFrame::ResetWindowWidth()
 	GetWindowRect(rFrame);
   ::CRect rScreen;
   SystemParametersInfo(SPI_GETWORKAREA, 0, (LPRECT)rScreen, 0);
-  rFrame.x2 = rFrame.x1 + newSize + wEdge*(dwViewCnt+1) + GetSystemMetrics(SM_CXVSCROLL)*dwViewCnt + (bSubView?wEdge*dwViewCnt:0);
+  if (m_nSplitView == ID_VIEW_SPLIT_V)
+  {
+      rFrame.x2 = rFrame.x1 + newSize + wEdge * 2 + GetSystemMetrics(SM_CXVSCROLL) * dwViewCnt + (bSubView ? BORDERWIDTH * dwViewCnt : 0);
+  }
+  else {
+      rFrame.x2 = rFrame.x1 + newSize + wEdge * 2 + GetSystemMetrics(SM_CXVSCROLL) + (bSubView ? BORDERWIDTH : 0);
+  }
   if(rFrame.Width() > rScreen.Width())rFrame.x2 = rFrame.x1 + rScreen.Width();
   MoveWindow(rFrame);
 
