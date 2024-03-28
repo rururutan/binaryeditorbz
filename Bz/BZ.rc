@@ -364,6 +364,8 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Zoom",                        ID_BMPVIEW_ZOOM
         MENUITEM SEPARATOR
+        MENUITEM "1bit color",                  ID_BMPVIEW_1BITCOLOR
+        MENUITEM "4bit color",                  ID_BMPVIEW_4BITCOLOR
         MENUITEM "8bit color",                  ID_BMPVIEW_8BITCOLOR
         MENUITEM "16bit color",                 ID_BMPVIEW_16BITCOLOR
         MENUITEM "24bit color",                 ID_BMPVIEW_24BITCOLOR

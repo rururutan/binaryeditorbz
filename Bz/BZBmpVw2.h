@@ -63,7 +63,7 @@ public:
     MSG_WM_VSCROLL(OnVScroll)
     MSG_WM_KEYDOWN(OnKeyDown)
     COMMAND_RANGE_HANDLER_EX(ID_BMPVIEW_WIDTH128, ID_BMPVIEW_ZOOM, OnBmpViewMode)
-    COMMAND_RANGE_HANDLER_EX(ID_BMPVIEW_8BITCOLOR, ID_BMPVIEW_32BITCOLOR, OnBmpViewColorWidth)
+    COMMAND_RANGE_HANDLER_EX(ID_BMPVIEW_1BITCOLOR, ID_BMPVIEW_32BITCOLOR, OnBmpViewColorWidth)
     COMMAND_ID_HANDLER_EX(ID_BMPVIEW_ADDRESSTOOLTIP, OnBmpViewAddressTooltip)
     COMMAND_RANGE_HANDLER_EX(ID_BMPVIEW_PALETTE_BZ, ID_BMPVIEW_PALETTE_SAFETY, OnPalletMode)
     COMMAND_RANGE_HANDLER_EX(ID_BMPVIEW_CUSTOMPALETTE_START, ID_BMPVIEW_CUSTOMPALETTE_END, OnPalletModeCustom)
@@ -152,6 +152,12 @@ public:
       pMenu.CheckMenuItem(ID_BMPVIEW_ZOOM, MF_BYCOMMAND | MF_CHECKED);
     switch(options.nBmpColorWidth)
     {
+    case 1:
+        pMenu.CheckMenuItem(ID_BMPVIEW_1BITCOLOR, MF_BYCOMMAND | MF_CHECKED);
+        break;
+    case 4:
+        pMenu.CheckMenuItem(ID_BMPVIEW_4BITCOLOR, MF_BYCOMMAND | MF_CHECKED);
+        break;
     case 8:
       switch(options.nBmpPallet)
       {
@@ -258,6 +264,12 @@ public:
   {
     switch(nID)
     {
+    case ID_BMPVIEW_1BITCOLOR:
+      options.nBmpColorWidth = 1;
+      break;
+    case ID_BMPVIEW_4BITCOLOR:
+      options.nBmpColorWidth = 4;
+      break;
     case ID_BMPVIEW_8BITCOLOR:
       options.nBmpColorWidth = 8;
       break;
@@ -426,7 +438,7 @@ public:
   UINT64 CalcAddress(UINT64 yVS)
   {
     UINT64 qwOffset = yVS * options.nBmpWidth;
-    qwOffset*=(DWORD)(options.nBmpColorWidth/8);
+    qwOffset = qwOffset * options.nBmpColorWidth / 8;
     return qwOffset;
   }
 

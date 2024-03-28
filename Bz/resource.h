@@ -129,15 +129,17 @@
 #define ID_VIEW_SYNCSCROLL              32847
 #define ID_Menu                         32848
 #define ID_VIEW_GRID1                   32849
-#define ID_BMPVIEW_8BITCOLOR            32850
-#define ID_BMPVIEW_16BITCOLOR           32851
-#define ID_BMPVIEW_24BITCOLOR           32852
-#define ID_BMPVIEW_32BITCOLOR           32853
-#define ID_BMPVIEW_ADDRESSTOOLTIP       32854
-#define ID_BMPVIEW_PALETTE_BZ           32855
-#define ID_BMPVIEW_PALETTE_SAFETY       32856
-#define ID_VIEW_ANALYZER                32858
-#define ID_BMP                          32859
+#define ID_BMPVIEW_1BITCOLOR            32850
+#define ID_BMPVIEW_4BITCOLOR            32851
+#define ID_BMPVIEW_8BITCOLOR            32852
+#define ID_BMPVIEW_16BITCOLOR           32853
+#define ID_BMPVIEW_24BITCOLOR           32854
+#define ID_BMPVIEW_32BITCOLOR           32855
+#define ID_BMPVIEW_ADDRESSTOOLTIP       32856
+#define ID_BMPVIEW_PALETTE_BZ           32857
+#define ID_BMPVIEW_PALETTE_SAFETY       32858
+#define ID_VIEW_ANALYZER                32859
+#define ID_BMP                          32860
 #define ID_BMPVIEW_CUSTOMPALETTE_START  35000
 #define ID_BMPVIEW_CUSTOMPALETTE_END    35100
 #define ID_INDICATOR_INFO               0xE710
@@ -168,7 +170,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        147
-#define _APS_NEXT_COMMAND_VALUE         32860
+#define _APS_NEXT_COMMAND_VALUE         32861
 #define _APS_NEXT_CONTROL_VALUE         1051
 #define _APS_NEXT_SYMED_VALUE           107
 #endif

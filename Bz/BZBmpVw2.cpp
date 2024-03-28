@@ -106,7 +106,7 @@ void CBZBmpView2::OnLButtonDown(UINT nFlags, ::CPoint point)
   if(point.x<=0)point.x = 0;
   else point.x /= options.nBmpZoom;
   if(point.x >= 0 && point.x < options.nBmpWidth && point.y >= BMPSPACE) {
-    currentAddress += (((UINT64)point.x) * (options.nBmpColorWidth/8));
+    currentAddress += (((UINT64)point.x) * options.nBmpColorWidth/8);
     CBZView* pView = GetBZView();
     if(pView)pView->MoveCaretTo(currentAddress);
   }
@@ -124,7 +124,7 @@ void CBZBmpView2::OnMouseMove(UINT nFlags, ::CPoint point)
   if(point.x<=0)point.x = 0;
   else point.x /= options.nBmpZoom;
   if(point.x >= 0 && point.x < options.nBmpWidth && point.y >= BMPSPACE) {
-    currentAddress += (((UINT64)point.x) * (options.nBmpColorWidth/8));
+    currentAddress += (((UINT64)point.x) * options.nBmpColorWidth/8);
     if(currentAddress != m_tooltipLastAddress)
     {
       CBZView* pView = GetBZView();
@@ -236,7 +236,7 @@ void CBZBmpView2::OnInitialUpdate()
     m_lpbi = (LPBITMAPINFOHEADER)MemAlloc(sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD)*256/*256pallet*/);
 
   m_lpbi->biSize = sizeof(BITMAPINFOHEADER);
-  m_cBmpY64 = dwTotal / (UINT64)(options.nBmpWidth * (options.nBmpColorWidth/8));
+  m_cBmpY64 = dwTotal / (UINT64)(options.nBmpWidth * options.nBmpColorWidth / 8);
   ATLTRACE("cBmpY64(%I64u) = dwTotal(%I64u) / (UINT64)(options.nBmpWidth(%d) * (options.nBmpColorWidth(%d)/8))\n", m_cBmpY64, dwTotal, options.nBmpWidth, options.nBmpColorWidth);
   Make8bitBITMAPINFOHEADER(m_lpbi, options.nBmpWidth, 1/*top-down DIB*/);
 
@@ -329,7 +329,7 @@ void CBZBmpView2::DoPaint(WTL::CDCHandle dc)
   //    , 0/*srcX*/, 0/*srcY*/, options.nBmpWidth/*srcW*/, nBmpHeight/*srcH*/);
   //ATLTRACE("ADDR: UINT64 qwOffset(%016I64X) = CalcAddress(%016I64X)\n", qwOffset, topVS);
 
-  DWORD dwReadSize = options.nBmpWidth * nBmpHeight * (options.nBmpColorWidth/8);
+  DWORD dwReadSize = options.nBmpWidth * nBmpHeight * options.nBmpColorWidth/8;
   if(dwReadSize<=pDoc->GetMaxCacheSize())
   {
     LPBYTE lpBits = pDoc->CacheForce(qwOffset, dwReadSize);
