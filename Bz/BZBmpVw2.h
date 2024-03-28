@@ -164,6 +164,9 @@ public:
       }
       pMenu.CheckMenuItem(ID_BMPVIEW_8BITCOLOR, MF_BYCOMMAND | MF_CHECKED);
       break;
+    case 16:
+      pMenu.CheckMenuItem(ID_BMPVIEW_16BITCOLOR, MF_BYCOMMAND | MF_CHECKED);
+      break;
     case 24:
       pMenu.CheckMenuItem(ID_BMPVIEW_24BITCOLOR, MF_BYCOMMAND | MF_CHECKED);
       break;
@@ -257,6 +260,9 @@ public:
     {
     case ID_BMPVIEW_8BITCOLOR:
       options.nBmpColorWidth = 8;
+      break;
+    case ID_BMPVIEW_16BITCOLOR:
+      options.nBmpColorWidth = 16;
       break;
     case ID_BMPVIEW_24BITCOLOR:
       options.nBmpColorWidth = 24;

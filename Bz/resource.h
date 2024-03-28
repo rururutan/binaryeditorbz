@@ -130,11 +130,12 @@
 #define ID_Menu                         32848
 #define ID_VIEW_GRID1                   32849
 #define ID_BMPVIEW_8BITCOLOR            32850
-#define ID_BMPVIEW_24BITCOLOR           32851
-#define ID_BMPVIEW_32BITCOLOR           32852
-#define ID_BMPVIEW_ADDRESSTOOLTIP       32853
-#define ID_BMPVIEW_PALETTE_BZ           32854
-#define ID_BMPVIEW_PALETTE_SAFETY       32855
+#define ID_BMPVIEW_16BITCOLOR           32851
+#define ID_BMPVIEW_24BITCOLOR           32852
+#define ID_BMPVIEW_32BITCOLOR           32853
+#define ID_BMPVIEW_ADDRESSTOOLTIP       32854
+#define ID_BMPVIEW_PALETTE_BZ           32855
+#define ID_BMPVIEW_PALETTE_SAFETY       32856
 #define ID_VIEW_ANALYZER                32858
 #define ID_BMP                          32859
 #define ID_BMPVIEW_CUSTOMPALETTE_START  35000
