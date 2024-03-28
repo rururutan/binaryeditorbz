@@ -2526,7 +2526,7 @@ int CBZView::GetWindowIdealWidth()
 {
   if(m_pDoc)
   {
-    return (CalcDUMP_X(GetFileSize())+66) * m_cell.cx;
+    return (CalcDUMP_X(GetFileSize())+66) * m_cell.cx + 8 * CBZDpi::ScaleX();
   }
-  return m_cell.cx*77;//m_sizeAll.cx;// * m_cell.cx;
+  return m_cell.cx*77 + 8 * CBZDpi::ScaleX();//m_sizeAll.cx;// * m_cell.cx;
 }
