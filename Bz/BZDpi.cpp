@@ -1,7 +1,7 @@
 
 #include "stdafx.h"
 
-float CBZDpi::m_x = 1.0f;
-float CBZDpi::m_y = 1.0f;
+int CBZDpi::m_x = 96;
+int CBZDpi::m_y = 96;
 BOOL  CBZDpi::m_init = FALSE;
 

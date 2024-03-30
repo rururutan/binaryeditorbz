@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // CBZBmpView2 view
 
 // #define BMPWIDTH	128		### 1.54c
-#define BMPSPACE	(8.0f * CBZDpi::ScaleX())	//margine
+#define BMPSPACE	(CBZDpi::ScaleX(8))	//margine
 
 void MakeBzPallet256(DWORD *pRGB);
 void MakeRedPallet256(DWORD *pRGB);

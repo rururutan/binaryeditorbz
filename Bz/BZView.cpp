@@ -706,7 +706,9 @@ void CBZView::Update()
 	InitCaret();
 	DrawCaret();
 	CMainFrame *pMainFrame = GetMainFrame();
-  if(pMainFrame)pMainFrame->ResetWindowWidth();
+	if (pMainFrame) {
+		pMainFrame->ResetWindowWidth();
+	}
 }
 
 void CBZView::UpdateSubView()
@@ -2526,7 +2528,7 @@ int CBZView::GetWindowIdealWidth()
 {
   if(m_pDoc)
   {
-    return (CalcDUMP_X(GetFileSize())+66) * m_cell.cx + 8 * CBZDpi::ScaleX();
+    return (CalcDUMP_X(GetFileSize())+66) * m_cell.cx + CBZDpi::ScaleX(8);
   }
-  return m_cell.cx*77 + 8 * CBZDpi::ScaleX();//m_sizeAll.cx;// * m_cell.cx;
+  return m_cell.cx*77 + CBZDpi::ScaleX(8);//m_sizeAll.cx;// * m_cell.cx;
 }

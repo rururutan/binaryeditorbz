@@ -737,17 +737,23 @@ BOOL CMainFrame::ResetSplitter()
     {
     if(bSubView && m_nSplitView==ID_VIEW_SPLIT_V)
     {
-      m_pWndSplitter->SetSplitterPosX(1, 200);
-      m_pWndSplitter->SetSplitterPosX(2, 820);
-      m_pWndSplitter->SetSplitterPosX(3, 1020);
+#if 0
+      // X軸はResetWindowWidthで設定しているので不要
+      m_pWndSplitter->SetSplitterPosX(1, CBZDpi::ScaleX(200));
+      m_pWndSplitter->SetSplitterPosX(2, CBZDpi::ScaleX(820));
+      m_pWndSplitter->SetSplitterPosX(3, CBZDpi::ScaleX(1020));
+#endif
     } else {
-      if(bSubView)m_pWndSplitter->SetSplitterPosX(1, 200);
-      else if(m_nSplitView==ID_VIEW_SPLIT_V)m_pWndSplitter->SetSplitterPosX(1, 620);
+#if 0
+      // X軸はResetWindowWidthで設定しているので不要
+      if(bSubView)m_pWndSplitter->SetSplitterPosX(1, CBZDpi::ScaleX(200));
+      else if(m_nSplitView==ID_VIEW_SPLIT_V)m_pWndSplitter->SetSplitterPosX(1, CBZDpi::ScaleX(620));
+#endif
       if(m_nSplitView==ID_VIEW_SPLIT_H)
       {
         ::CRect r;
         if(m_pWndSplitter->GetWindowRect(&r))m_pWndSplitter->SetSplitterPosY(1, r.Height()/2);
-        else m_pWndSplitter->SetSplitterPosY(1, 200);
+        else m_pWndSplitter->SetSplitterPosY(1, CBZDpi::ScaleY(200));
       }
     }
     }

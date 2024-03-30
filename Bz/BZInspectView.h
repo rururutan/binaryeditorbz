@@ -252,7 +252,7 @@ public:
 
   int GetWindowIdealWidth()
   {
-    return 180.0f * CBZDpi::ScaleX();
+    return CBZDpi::ScaleX(180);
   }
 };
 

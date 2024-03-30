@@ -5,27 +5,37 @@ class CBZDpi
 {
 public:
 
-  static float m_x;
-  static float m_y;
+  static int m_x;
+  static int m_y;
   static BOOL  m_init;
 
   static void Init(HWND hWnd)
   {
     if(m_init)return;
     HDC hdc = GetDC(hWnd);
-    m_x = ((float)GetDeviceCaps(hdc, LOGPIXELSX))/96.0f;
-    m_y = ((float)GetDeviceCaps(hdc, LOGPIXELSY))/96.0f;
+    m_x = GetDeviceCaps(hdc, LOGPIXELSX);
+    m_y = GetDeviceCaps(hdc, LOGPIXELSY);
     m_init = TRUE;
     ReleaseDC(hWnd, hdc);
   }
 
-  static float ScaleX()
+  static int ScaleX(int _x)
   {
-    return m_x;
+      return MulDiv(_x, m_x, USER_DEFAULT_SCREEN_DPI);
   }
 
-  static float ScaleY()
+  static int ScaleY(int _y)
   {
-    return m_y;
+      return MulDiv(_y, m_y, USER_DEFAULT_SCREEN_DPI);
+  }
+
+  static int ScaleX96Dpi(int _x)
+  {
+    return MulDiv(_x, USER_DEFAULT_SCREEN_DPI, m_x);
+  }
+
+  static int ScaleY96Dpi(int _y)
+  {
+    return MulDiv(_y, USER_DEFAULT_SCREEN_DPI, m_y);
   }
 };

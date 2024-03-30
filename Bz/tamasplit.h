@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define PANEMAX (PANEMAXW*PANEMAXH)
 
 #define HEADERHEIGHT 13+7+1
-#define BORDERWIDTH (4 * CBZDpi::ScaleX())
+#define BORDERWIDTH (CBZDpi::ScaleX(4))
 
 class CBZCoreData;
 
@@ -88,7 +88,7 @@ public:
 		m_bPressLButton = FALSE;
     m_bHeader = FALSE;
     m_headermode = SPLITMODE_NOSPLIT;
-    m_headerHeight = (((float)HEADERHEIGHT) * CBZDpi::ScaleY());
+    m_headerHeight = CBZDpi::ScaleY(HEADERHEIGHT);
     m_numHeaderPaneX = 1;
     m_halftoneBrush = WTL::CDCHandle::GetHalftoneBrush();
     InitBorderBrush();
