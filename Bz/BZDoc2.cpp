@@ -321,6 +321,11 @@ void CBZDoc2::OnFileSaveAs(HWND hWnd) //MFCからウィンドウを閉じる時にOnFileSaveA
   WTL::CFileDialog dlg(FALSE, _T("*"), NULL, OFN_NOVALIDATE | OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT/*OFN_PATHMUSTEXIST*/
     , _T("すべてのファイル (*)\0*\0\0"), hWnd);
 
+  // 初期パスをドキュメントのパスに変更
+  CString filePath = m_pSFC->GetFilePath();
+  PathRemoveFileSpec(filePath.GetBuffer());
+  dlg.m_ofn.lpstrInitialDir = filePath;
+
   if(dlg.DoModal() == IDOK){
     if(!m_pSFC || !m_pSFC->SaveAs(dlg.m_szFileName))
     {
