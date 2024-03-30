@@ -1,38 +1,10 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/ran1b146csojgck3?svg=true)](https://ci.appveyor.com/project/tamachan/binaryeditorbz-qxxwa)
+# Binary Editor Bz
 
-## [ƒ_ƒEƒ“ƒ[ƒh‚ÖˆÚ“®¨](https://gitlab.com/devill.tamachan/binaryeditorbz/-/releases)
+[Bz Editor](https://gitlab.com/devill.tamachan/binaryeditorbz)ã®ç§å®¶ç‰ˆã§ã™ã€‚
 
-## [ƒwƒ‹ƒv‚ÖˆÚ“®¨](http://devil-tamachan.github.io/BZDoc/)
+è©³ç´°ã«ã¤ã„ã¦ã¯ã‚ªãƒªã‚¸ãƒŠãƒ«ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ[README_org.md](README_org.md)ã‚’ãŠèª­ã¿ãã ã•ã„ã€‚
 
-[c.mos‚³‚ñ](http://www.vcraft.jp/)ìA[Binary Editor Bz](http://www.vcraft.jp/soft/bz.html)‚Ì‰ü‘¢”Å‚Å‚· 
-c.mos‚³‚ñ‚Ì‚²DˆÓ‚Åƒ\[ƒX‚ª’¸‚¯‚Ü‚µ‚½B‚»‚ê‚ğtamachan‚ª‰ü‘¢‚µ‚Ü‚µ‚½B 
+## é‡è¦ãªå¤‰æ›´
 
-![](https://gitlab.com/devill.tamachan/BZDoc/raw/master/site/image/bzscratch6.png)
+ãƒãƒ¼ã‚¿ãƒ–ãƒ«ãƒ¢ãƒ¼ãƒ‰ç”¨ã®ãƒ•ã‚¡ã‚¤ãƒ«åãŒEnablePortableMode.txtã‹ã‚‰Bz.configã«å¤‰æ›´ã•ã‚Œã¦ã„ã¾ã™
 
-¡Œã‚ÌƒAƒbƒvƒf[ƒg—\’èF
-
- * 1.9.X (‹ß“ú) - ‹@”\’Ç‰ÁAƒoƒOC³AÅ“K‰»
- * 2.0 (–¢’è) - ˆÀ’è‚µ‚½‚çEEE
- * X.X (–¢’è) - RAWƒfƒBƒXƒNƒTƒ|[ƒg‚Æ‚©‹@”\’Ç‰Á‚Æ‚©
- * Fill‚Ì‚‘¬/Èƒƒ‚ƒŠ‰»
- * ƒLƒƒƒbƒVƒ…‚ğHDD‚Ö‘Ş”ğ‚³‚¹Aƒƒ‚ƒŠ‹óŠÔˆÈã‚Ì•ÒW‚ğ‰Â”\‚É‚·‚é‹@”\
- * ‚QˆÈã‚Ì•ªŠ„•\¦
- * ƒoƒOC³
- * BMP•\¦‚Ì‹­‰»
- * ‚ ‚Æƒ`ƒ}ƒ`ƒ}‚Æ‚µ‚½‹@”\
- * ‰pŒê”ÅƒŠƒ\[ƒX‚Ì•âC
-
-—Dæ“x’áF
-
- * HTML5‚Öƒ|[ƒg
-
-
-ƒoƒOƒŒƒ|[ƒgA—v–]‚Í [Issues](https://gitlab.com/devill.tamachan/binaryeditorbz/issues) ‚Ö‚Ç‚¤‚¼ 
-
-« Bz1.9.8
-
-![](https://gitlab.com/devill.tamachan/binaryeditorbz/raw/master/HP/bzscr20151222.png)
-
- MacOSX”Å‚ÌƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg20130606
-
-![](https://gitlab.com/devill.tamachan/binaryeditorbz/raw/master/HP/macalpha20130606.png)
