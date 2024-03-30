@@ -66,7 +66,7 @@ HRESULT CBZOptions::LoadFromFile()
 {
   DWORD len=0, lenPlusSpace=0;
   CString path;
-  path = GetModulePath(_T("EnablePortableMode.txt"));
+  path = GetModulePath(_T("Bz.config"));
   uchar *pFile = (uchar *)ReadFile(path, &len, &lenPlusSpace, 30, TRUE, FALSE);
   if(pFile==NULL)return E_FAIL;
   void *pParser = ParseAlloc(malloc);

@@ -304,7 +304,7 @@ public:
   HRESULT SaveToFile()
   {
     CString path;
-    path = GetModulePath(_T("EnablePortableMode.txt"));
+    path = GetModulePath(_T("Bz.config"));
     CAtlFile file;
     if(FAILED(file.Create(path, GENERIC_WRITE, 0, CREATE_ALWAYS)))return E_FAIL;
 
