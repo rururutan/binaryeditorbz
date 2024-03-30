@@ -151,7 +151,7 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Split &Horizontally",         ID_VIEW_SPLIT_H
         MENUITEM "Split &Vertically",           ID_VIEW_SPLIT_V
-        MENUITEM "Sync Scroll",                 ID_VIEW_SYNCSCROLL
+        MENUITEM "S&ync Scroll",                 ID_VIEW_SYNCSCROLL
         MENUITEM SEPARATOR
         MENUITEM "Full &Pathname",              ID_VIEW_FULLPATH
         MENUITEM "Sub Cu&rsor",                 ID_VIEW_SUBCURSOR
