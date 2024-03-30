@@ -148,14 +148,14 @@ public:
 
     if(m_bSigned)
     {
-      m_staticBinary1.SetWindowText(_T("char"));
-      m_staticBinary2.SetWindowText(_T("short"));
-      m_staticBinary4.SetWindowText(_T("int"));
+      m_staticBinary1.SetWindowText(_T("int8"));
+      m_staticBinary2.SetWindowText(_T("int16"));
+      m_staticBinary4.SetWindowText(_T("int32"));
       m_staticBinary8.SetWindowText(_T("int64"));
     } else {
-      m_staticBinary1.SetWindowText(_T("uchar"));
-      m_staticBinary2.SetWindowText(_T("ushort"));
-      m_staticBinary4.SetWindowText(_T("uint"));
+      m_staticBinary1.SetWindowText(_T("uint8"));
+      m_staticBinary2.SetWindowText(_T("uint16"));
+      m_staticBinary4.SetWindowText(_T("uint32"));
       m_staticBinary8.SetWindowText(_T("uint64"));
     }
     Update();
