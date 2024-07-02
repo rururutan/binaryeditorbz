@@ -1783,7 +1783,7 @@ BOOL CBZView::CalcHexa(LPCSTR sExp, long& n1)
 	}
 	if(op) {
 		CString sMsg;
-		sMsg.Format(IDS_ERR_SYNTAX, sExp);
+		sMsg.Format(IDS_ERR_SYNTAX, (LPCTSTR)CA2T((LPSTR)(sExp)));
 		MessageBox(sMsg, _T("ERROR"), MB_ICONHAND);
 		return FALSE;
 	}
